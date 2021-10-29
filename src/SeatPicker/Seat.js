@@ -8,7 +8,9 @@ export default class Seat extends Component {
   };
 
   handleClick = () => {
-    !this.props.isReserved && this.props.selectSeat();
+    !this.props.isReserved &&
+      !this.props.isDisabledNoclick &&
+      this.props.selectSeat();
   };
 
   render() {

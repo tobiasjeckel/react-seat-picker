@@ -150,8 +150,9 @@ Each json in rows prop could be `null` (empty seat) or has these properties.
 | `number`      | number or string | undefined | `false`  | It will be showed inside seat.                                      |
 | `tooltip`     | string           | undefined | `false`  | Text of the tooltip when hovering over the seat.                    |
 | `isSelected`  | boolean          | `false`   | `false`  | It will be checked in case selectedByDefault is true.               |
-| `isReserved`  | boolean          | `false`   | `false`  | Disable the option of click it.
-| `isDisabled`  | boolean          | `false`   | `false`  | Cannot be selected, but still be clicked.                                     |
+| `isReserved`  | boolean          | `false`   | `false`  | Disable the option of click it and shows light grey tone.
+| `isDisabled`  | boolean          | `false`   | `false`  | Cannot be selected, but still be clicked. 
+| `isDisabledNoClick`  | boolean          | `false`   | `false`  | Cannot be selected, shows disabled gray tone.                                 |
 | `orientation` | string           | north     | `false`  | Define the position of an specific seat (north, south, east, west). |
 
 ## License
