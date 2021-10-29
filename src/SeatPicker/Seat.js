@@ -24,7 +24,13 @@ export default class Seat extends Component {
     const className =
       "seat" +
       (isSelected ? " seat--selected" : "") +
-      (!isSelected && isEnabled && !isReserved ? " seat--enabled" : "") +
+      (!isSelected &&
+      isEnabled &&
+      !isReserved &&
+      !isDisabledClick &&
+      !isDisabledNoclick
+        ? " seat--enabled"
+        : "") +
       (isReserved ? " seat--reserved" : "") +
       (isDisabledClick ? " seat--disabled-click" : "") +
       (isDisabledNoclick ? " seat--disabled-noclick" : "") +
