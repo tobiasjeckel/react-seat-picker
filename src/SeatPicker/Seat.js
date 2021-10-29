@@ -18,14 +18,16 @@ export default class Seat extends Component {
       isEnabled,
       isReserved,
       orientation,
-      isDisabled,
+      isDisabledClick,
+      isDisabledNoclick,
     } = this.props;
     const className =
       "seat" +
       (isSelected ? " seat--selected" : "") +
       (!isSelected && isEnabled && !isReserved ? " seat--enabled" : "") +
       (isReserved ? " seat--reserved" : "") +
-      (isDisabled ? " seat--disabled" : "") +
+      (isDisabledClick ? " seat--disabled-click" : "") +
+      (isDisabledNoclick ? " seat--disabled-noclick" : "") +
       ` seat--${!orientation ? "north" : orientation}`;
     return (
       <div data-tip={tooltip} className={className} onClick={this.handleClick}>
@@ -39,7 +41,8 @@ export default class Seat extends Component {
 Seat.propTypes = {
   isSelected: PropTypes.bool,
   isReserved: PropTypes.bool,
-  isDisabled: PropTypes.bool,
+  isDisabledNoclick: PropTypes.bool,
+  isDisabledClick: PropTypes.bool,
   tooltip: PropTypes.string,
   isEnabled: PropTypes.bool,
   orientation: PropTypes.oneOf(["north", "south", "east", "west"]),
