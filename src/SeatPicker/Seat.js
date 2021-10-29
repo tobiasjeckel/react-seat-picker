@@ -27,8 +27,7 @@ export default class Seat extends Component {
       (!isSelected &&
       isEnabled &&
       !isReserved &&
-      !isDisabledClick &&
-      !isDisabledNoclick
+      (!isDisabledClick || !isDisabledNoclick)
         ? " seat--enabled"
         : "") +
       (isReserved ? " seat--reserved" : "") +
