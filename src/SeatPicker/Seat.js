@@ -18,7 +18,7 @@ export default class Seat extends Component {
       isEnabled,
       isReserved,
       orientation,
-      isDisabled
+      isDisabled,
     } = this.props;
     const className =
       "seat" +
