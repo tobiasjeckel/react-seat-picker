@@ -27,14 +27,14 @@ export default class Seat extends Component {
       (!isSelected &&
       isEnabled &&
       !isReserved &&
-      (!isDisabledClick || !isDisabledNoclick)
+      !isDisabledClick &&
+      !isDisabledNoclick
         ? " seat--enabled"
         : "") +
       (isReserved ? " seat--reserved" : "") +
       (isDisabledClick ? " seat--disabled-click" : "") +
       (isDisabledNoclick ? " seat--disabled-noclick" : "") +
       ` seat--${!orientation ? "north" : orientation}`;
-    console.log(this.props);
     return (
       <div data-tip={tooltip} className={className} onClick={this.handleClick}>
         {tooltip ? <ReactTooltip {...this.props.tooltipProps} /> : null}
